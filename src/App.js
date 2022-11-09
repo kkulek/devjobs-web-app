@@ -5,16 +5,18 @@ import {Job} from "./pages/Job";
 import {PageNotFound} from "./pages/PageNotFound";
 
 function App() {
-  return (
-      <Router>
-          <Header />
-          <Routes>
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/jobs/:name" element={<Job />}></Route>
-              <Route path="*" element={<PageNotFound />}></Route>
-          </Routes>
-      </Router>
-  );
+    return (
+        <Router>
+            <main className="bg-gray-100 h-full min-h-screen relative">
+                <Header/>
+                <Routes>
+                    <Route path="/" element={<Home/>}></Route>
+                    <Route path="/jobs/:name" element={<Job/>}></Route>
+                    <Route path="*" element={<PageNotFound/>}></Route>
+                </Routes>
+            </main>
+        </Router>
+    );
 }
 
 export default App;
