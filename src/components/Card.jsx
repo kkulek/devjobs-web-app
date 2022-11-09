@@ -1,13 +1,12 @@
 import {Link} from "react-router-dom";
 
-export function Card({key, data}) {
+export function Card({data}) {
     const logoBackground = {
         backgroundColor: data.logoBackground,
     }
 
     return (
-        <>
-            <div key={key} className="p-6 bg-white rounded relative">
+            <div className="p-6 bg-white rounded relative">
                 <div className="absolute top-0 h-12 w-12 rounded-xl bg-violet-50 -translate-y-1/2"
                      style={logoBackground}>
                 </div>
@@ -22,6 +21,5 @@ export function Card({key, data}) {
                 <h3 className="mt-1">{data.company}</h3>
                 <p className="mt-8">{data.location}</p>
             </div>
-        </>
     )
 }
