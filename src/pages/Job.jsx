@@ -1,51 +1,43 @@
 import {useLocation} from 'react-router-dom';
+import {Banner} from "../components/Banner";
+import {PositionDescription} from "../components/PositionDescription";
+import {CTA} from "../components/CTA";
 
 export function Job() {
     const locationData = useLocation();
 
     const {
+        company,
         postedAt,
         contract,
         position, location,
         apply,
         description,
         requirements,
-        role
+        role,
+        logoBackground,
+        website
     } = locationData.state
 
     return (
-        <div className="w-3/4 mt-10 mx-auto">
-            <div className="flex mb-10 gap-5 flex-col xs:flex-row xs:justify-between xs:items-center">
-                <div>
-                    <p>
-                        <span className="mr-2">{postedAt}</span>
-                        <span className="mr-2">.</span>
-                        <span>{contract}</span>
-                    </p>
-                    <h1>{position}</h1>
-                    <p>{location}</p>
-                </div>
-                <a href={apply} target="_blank" rel="noreferrer">Apply</a>
-            </div>
-            <p className="mb-10">{description}</p>
-            <h2 className="mb-4">Requirements</h2>
-            <p className="mb-4">{requirements.content}</p>
-            <ul className="list-disc">
-                {requirements.items.map((item, index) => {
-                    return (
-                        <li key={index}>{item}</li>
-                    )
-                })}
-            </ul>
-            <h2 className="mb-4 mt-10">What You Will Do</h2>
-            <p className="mb-4">{role.content}</p>
-            <ol className="list-decimal">
-                {role.items.map((item, index) => {
-                    return (
-                        <li key={index}>{item}</li>
-                    )
-                })}
-            </ol>
+        <div className="mx-5 mt-20 sm:mx-auto sm:w-5/6 max-w-[900px]">
+            <Banner company={company}
+                    website={website}
+                    logoBackground={logoBackground}
+            />
+            <PositionDescription postedAt={postedAt}
+                                 contract={contract}
+                                 position={position}
+                                 location={location}
+                                 apply={apply}
+                                 description={description}
+                                 requirements={requirements}
+                                 role={role}
+            />
+            <CTA
+                company={company}
+                position={position}
+                apply={apply}/>
         </div>
     )
 }
