@@ -1,14 +1,13 @@
 import {Link} from "react-router-dom";
 
 export function Card({data}) {
-    const logoBg = {
-        backgroundColor: data.logoBackground,
-    }
 
     return (
             <div className="p-6 bg-white rounded relative">
-                <div className="absolute top-0 h-12 w-12 rounded-xl bg-violet-50 -translate-y-1/2"
-                     style={logoBg}>
+                <div className="absolute top-0 h-14 w-14 rounded-xl -translate-y-1/2"
+                     style={{backgroundColor: data.logoBackground}}>
+                    <img src={process.env.PUBLIC_URL + data.logo} alt={data.company + ' logo'}
+                         className="p-2 h-full w-full object-center object-contain"/>
                 </div>
                 <p className="mt-4">
                     <span className="mr-2">{data.postedAt}</span>

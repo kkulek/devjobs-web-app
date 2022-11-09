@@ -16,7 +16,8 @@ export function Job() {
         requirements,
         role,
         logoBackground,
-        website
+        website,
+        logo
     } = locationData.state
 
     return (
@@ -24,6 +25,7 @@ export function Job() {
             <Banner company={company}
                     website={website}
                     logoBackground={logoBackground}
+                    logo={logo}
             />
             <PositionDescription postedAt={postedAt}
                                  contract={contract}
