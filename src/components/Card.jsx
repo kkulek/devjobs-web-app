@@ -15,7 +15,7 @@ export function Card({data}) {
                     <span className="mr-2">.</span>
                     <span>{data.contract}</span>
                 </p>
-                <Link to="/">
+                <Link to={`/jobs/${data.company}-${data.position}`} state={data}>
                     <h2 className="mt-1 font-bold">{data.position}</h2>
                 </Link>
                 <h3 className="mt-1">{data.company}</h3>
