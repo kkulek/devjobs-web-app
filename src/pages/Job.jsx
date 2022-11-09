@@ -6,6 +6,10 @@ import {CTA} from "../components/CTA";
 export function Job() {
     const locationData = useLocation();
 
+    window.scrollTo({
+        top: 0
+    });
+
     const {
         company,
         postedAt,
@@ -16,14 +20,16 @@ export function Job() {
         requirements,
         role,
         logoBackground,
-        website
-    } = locationData.state
+        website,
+        logo
+    } = locationData.state;
 
     return (
         <div className="mx-5 mt-20 sm:mx-auto sm:w-5/6 max-w-[900px]">
             <Banner company={company}
                     website={website}
                     logoBackground={logoBackground}
+                    logo={logo}
             />
             <PositionDescription postedAt={postedAt}
                                  contract={contract}
