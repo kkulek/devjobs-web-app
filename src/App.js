@@ -1,19 +1,29 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {jobPositions} from './data'
+import {useEffect, useState} from "react";
 import {Header} from "./components/Header";
 import {Home} from "./pages/Home";
 import {Job} from "./pages/Job";
 import {PageNotFound} from "./pages/PageNotFound";
 
 function App() {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        setIsLoaded(true)
+    }, [])
+
     return (
         <Router>
             <main className="bg-gray-100 h-full min-h-screen relative">
                 <Header/>
-                <Routes>
-                    <Route path="/" element={<Home/>}></Route>
-                    <Route path="/jobs/:name" element={<Job/>}></Route>
-                    <Route path="*" element={<PageNotFound/>}></Route>
-                </Routes>
+                {!isLoaded ? console.log('not loaded yet') : (
+                    <Routes>
+                        <Route path="/" element={<Home data={jobPositions}/>}></Route>
+                        <Route path="/jobs/:name" element={<Job/>}></Route>
+                        <Route path="*" element={<PageNotFound/>}></Route>
+                    </Routes>
+                )}
             </main>
         </Router>
     );
