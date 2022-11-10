@@ -16,7 +16,7 @@ export function Banner({company, website, logoBackground, logo}) {
             </div>
             <div className="mt-10 mb-4 sm:basis-full sm:mt-0 sm:mb-0">
                 <h2>{company}</h2>
-                <h2>{company.toLowerCase()}.com</h2>
+                <h2>{company.toLowerCase().split(' ').join('')}.com</h2>
             </div>
             <Button link={website} text={"Company Site"}/>
         </div>

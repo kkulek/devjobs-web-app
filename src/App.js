@@ -7,11 +7,22 @@ import {Job} from "./pages/Job";
 import {PageNotFound} from "./pages/PageNotFound";
 
 function App() {
+    const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        setIsLoaded(true)
+        setIsLoaded(true);
+        setData(jobPositions.map(item => (
+            {
+                ...item,
+                mix: item.position + item.company
+            })));
     }, [])
+
+    useEffect(() => {
+        setIsLoaded(true);
+    }, [data])
+
 
     return (
         <Router>
@@ -19,7 +30,7 @@ function App() {
                 <Header/>
                 {!isLoaded ? console.log('not loaded yet') : (
                     <Routes>
-                        <Route path="/" element={<Home data={jobPositions}/>}></Route>
+                        <Route path="/" element={<Home data={data}/>}></Route>
                         <Route path="/jobs/:name" element={<Job/>}></Route>
                         <Route path="*" element={<PageNotFound/>}></Route>
                     </Routes>

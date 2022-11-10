@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 export function Card({data}) {
 
     const {
+        id,
         logoBackground,
         logo,
         company,
@@ -13,7 +14,7 @@ export function Card({data}) {
     } = data;
 
     return (
-            <div className="p-6 bg-white rounded relative">
+            <div id={id} className="p-6 bg-white rounded relative">
                 <div className="absolute top-0 h-14 w-14 rounded-xl -translate-y-1/2"
                      style={{backgroundColor: logoBackground}}>
                     <img src={process.env.PUBLIC_URL + logo} alt={company + ' logo'}
