@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/*Dark mode toggle*/
+input:checked ~ .circle {
+    transform: translateX(100%);
+}
