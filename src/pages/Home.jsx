@@ -12,17 +12,16 @@ export function Home({data}) {
         const hideCard = (id) => document.getElementById(id).style.display = 'none'
         const showCard = (id) => document.getElementById(id).style.display = 'block'
 
-                data.map((item) => {
-                    !item.location.toLowerCase().includes(location) || !item.mix.toLowerCase().includes(mix)
-                        ? hideCard(item.id)
-                        : showCard(item.id)
-                })
-        }
+        data.map((item) => !item.location.toLowerCase().includes(location) || !item.mix.toLowerCase().includes(mix)
+            ? hideCard(item.id)
+            : showCard(item.id)
+        )
+    }
 
     return (
         <div className="bg-gray-200 my-10 p-10">
-            <SearchBar handleFilter={handleFilter} />
-            <Feed data={data} />
+            <SearchBar handleFilter={handleFilter}/>
+            <Feed data={data}/>
         </div>
     )
 }
