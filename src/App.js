@@ -19,11 +19,6 @@ function App() {
             })));
     }, [])
 
-    useEffect(() => {
-        setIsLoaded(true);
-    }, [data])
-
-
     return (
         <Router>
             <main className="bg-gray-100 h-full min-h-screen relative">
