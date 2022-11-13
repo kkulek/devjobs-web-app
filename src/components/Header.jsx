@@ -1,8 +1,10 @@
+
+
 export function Header() {
 
     return (
-        <div className="w-full h-40 bg-header-mobile lg:bg-header-desktop bg-no-repeat bg-cover bg-center">
-            <div className="mx-auto max-w-[1600px] h-full flex justify-between items-center px-4">
+        <div className="w-full h-40 bg-header-mobile lg:bg-header-desktop bg-no-repeat bg-cover bg-center bg-gray-200">
+            <div className="mx-auto max-w-[1600px] h-full flex justify-between items-center">
                 <img src="../assets/desktop/logo.svg" alt="Devjobs logo"/>
                 <label htmlFor="theme" className="flex items-center cursor-pointer">
                     <div className="relative">
