@@ -57,7 +57,7 @@ export function SearchBar({handleFilter}) {
                     <div className="flex items-center justify-between gap-4 py-2">
                         <button className="px-4 py-3 mx-auto w-full bg-blue-500 font-bold text-sm text-white rounded"
                             type="submit" onClick={handleSearch}>Search</button>
-                        <button className="px-4 py-3 mx-auto w-full sm:w-32 bg-blue-100 text-blue-700 font-bold text-sm text-white rounded"
+                        <button className="px-4 py-3 mx-auto w-full w-32 bg-blue-100 text-blue-700 font-bold text-sm text-white rounded"
                             onClick={handleClear}>Clear</button>
                     </div>
                 </form>
