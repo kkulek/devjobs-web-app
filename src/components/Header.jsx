@@ -26,7 +26,7 @@ export function Header() {
                 <img src="../assets/desktop/logo.svg" alt="Devjobs logo"/>
                 <label htmlFor="theme" className="flex items-center cursor-pointer">
                     <div className="relative">
-                        <input type="checkbox" id="theme" className="sr-only" checked={darkIsChecked} onChange={handleThemeSwitch}/>
+                        <input type="checkbox" id="theme" className="sr-only" defaultChecked={darkIsChecked} onChange={handleThemeSwitch}/>
                         <span className=
                                   "block bg-white w-10 h-6 rounded-full
                                    before:content-sun before:absolute before:-left-6 before:top-0.5
