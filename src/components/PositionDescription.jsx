@@ -10,32 +10,32 @@ export function PositionDescription({postedAt, contract, position, location, app
                         <span className="mr-2">.</span>
                         <span>{contract}</span>
                     </p>
-                    <h1>{position}</h1>
-                    <p>{location}</p>
+                    <h2 className="font-bold text-2xl md:text-3xl">{position}</h2>
+                    <p className="text-blue-600">{location}</p>
                 </div>
                 <Button link={apply} text={"Apply Now"} primary/>
             </div>
             <p className="mb-10 max-w-prose">{description}</p>
-            <h2 className="mb-4">Requirements</h2>
+            <h3 className="mb-4 font-bold text-xl md:text-2xl dark:text-blue-600">Requirements</h3>
             <p className="mb-4 max-w-prose">{requirements.content}</p>
             <ul>
                 {requirements.items.map((item, index) => {
                     return (
                         <li key={index} className="relative pl-6 max-w-prose">
                             <span
-                                className="bg-black dark:bg-slate-200 absolute inline-block w-2 h-2 left-0 top-0 translate-y-full rounded-full"></span>
+                                className="bg-blue-600 absolute inline-block w-2 h-2 left-0 top-0 translate-y-full rounded-full"></span>
                             {item}
                         </li>
                     )
                 })}
             </ul>
-            <h2 className="mb-4 mt-10">What You Will Do</h2>
+            <h3 className="mb-4 mt-10 font-bold text-xl md:text-2xl dark:text-blue-600">What You Will Do</h3>
             <p className="mb-4 max-w-prose">{role.content}</p>
             <ol>
                 {role.items.map((item, index) => {
                     return (
                         <li key={index} className="relative pl-6 max-w-prose">
-                            <span className="absolute left-0">{index + 1}.</span>
+                            <span className="absolute left-0 text-blue-600">{index + 1}.</span>
                             {item}</li>
                     )
                 })}
