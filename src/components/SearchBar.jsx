@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {Input} from "../misc/Input"
 
 export function SearchBar({handleFilter}) {
     const DEFAULT = {
@@ -30,23 +31,37 @@ export function SearchBar({handleFilter}) {
     }
 
     return (
-        <form className="mb-20 flex gap-4">
-            <input
-                type="text"
-                placeholder="Filter by title, companies, experience..."
-                id="mix"
-                value={input.mix}
-                onChange={handleInput}
-            />
-            <input
-                type="text"
-                placeholder="Filter by location"
-                id="location"
-                value={input.location}
-                onChange={handleInput}
-            />
-            <button type="submit" onClick={handleSearch}>Search</button>
-            <button onClick={handleClear}>clear</button>
-        </form>
+        <div className="flex justify-center -translate-y-1/4 md:-translate-y-1/2 ">
+            <div className="inline-block bg-white px-6 rounded shadow-lg">
+                <form className="flex flex-col md:flex-row gap-2">
+                    <label htmlFor="mix" className="flex items-center">
+                        <span className="inline-block h-6 w-6 bg-search bg-no-repeat bg-center bg-contain"></span>
+                        <Input
+                            placeholder="Filter by title, companies, experience..."
+                            idVal="mix"
+                            value={input.mix}
+                            onChange={handleInput}
+                            width={60}
+                        />
+                    </label>
+                    <label htmlFor="location" className="flex items-center">
+                        <span className="inline-block h-6 w-6 bg-location bg-no-repeat bg-center bg-contain"></span>
+                        <Input
+                            placeholder="Filter by location"
+                            idVal="location"
+                            value={input.location}
+                            onChange={handleInput}
+                            width={40}
+                        />
+                    </label>
+                    <div className="flex items-center justify-between gap-4 py-2">
+                        <button className="px-4 py-3 mx-auto w-full bg-blue-500 font-bold text-sm text-white rounded"
+                            type="submit" onClick={handleSearch}>Search</button>
+                        <button className="px-4 py-3 mx-auto w-full sm:w-32 bg-blue-100 text-blue-700 font-bold text-sm text-white rounded"
+                            onClick={handleClear}>Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     )
 }
