@@ -2,7 +2,7 @@ import {Button} from "./Button";
 
 export function PositionDescription({postedAt, contract, position, location, apply, description, requirements, role}) {
     return (
-        <div className="bg-white p-10 mt-10">
+        <div className="bg-white dark:bg-slate-800 p-10 mt-10 dark:text-slate-200">
             <div className="flex mb-10 gap-5 flex-col sm:flex-row sm:justify-between sm:items-center">
                 <div>
                     <p>
@@ -23,7 +23,7 @@ export function PositionDescription({postedAt, contract, position, location, app
                     return (
                         <li key={index} className="relative pl-6 max-w-prose">
                             <span
-                                className="bg-black absolute inline-block w-2 h-2 left-0 top-0 translate-y-full rounded-full"></span>
+                                className="bg-black dark:bg-slate-200 absolute inline-block w-2 h-2 left-0 top-0 translate-y-full rounded-full"></span>
                             {item}
                         </li>
                     )

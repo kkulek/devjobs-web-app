@@ -4,7 +4,7 @@ export function Banner({company, website, logoBackground, logo}) {
 
     return (
         <div className=
-                 "bg-white flex flex-col items-center rounded relative text-center pb-6 sm:pr-10
+                 "bg-white dark:bg-slate-800 dark:text-slate-200 flex flex-col items-center rounded relative text-center pb-6 sm:pr-10
                   sm:flex-row sm:justify-between sm:gap-6 sm:text-left sm:pb-0 "
         >
             <div className=
@@ -16,7 +16,7 @@ export function Banner({company, website, logoBackground, logo}) {
             </div>
             <div className="mt-10 mb-4 sm:basis-full sm:mt-0 sm:mb-0">
                 <h2>{company}</h2>
-                <h2>{company.toLowerCase().split(' ').join('')}.com</h2>
+                <h3>{company.toLowerCase().split(' ').join('')}.com</h3>
             </div>
             <Button link={website} text={"Company Site"}/>
         </div>

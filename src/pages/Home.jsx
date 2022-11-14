@@ -19,7 +19,7 @@ export function Home({data}) {
     }
 
     return (
-        <div className="bg-gray-200 pb-10">
+        <div className="dark:bg-slate-900 pb-10">
             <SearchBar handleFilter={handleFilter}/>
             <Feed data={data}/>
         </div>

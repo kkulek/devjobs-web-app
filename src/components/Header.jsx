@@ -1,19 +1,26 @@
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 export function Header() {
     const [darkIsChecked, setDarkIsChecked] = useState(null);
 
     useEffect(() => {
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.body.classList.add('dark')
+            document.body.classList.add('dark');
+            setDarkIsChecked(true)
         } else {
             document.body.classList.remove('dark')
+            setDarkIsChecked(false)
         }
-        setDarkIsChecked(document.body.classList.contains('dark'))
+        setDark()
     }, [])
 
+    const setDark = () => {
+        setDarkIsChecked(document.body.classList.contains('dark'))
+    }
+
     useEffect(() => {
-        darkIsChecked ? document.body.classList.add('dark') : document.body.classList.remove('dark')
+        !darkIsChecked ? document.body.classList.add('dark') : document.body.classList.remove('dark')
     }, [darkIsChecked])
 
     const handleThemeSwitch = () => {
@@ -21,9 +28,9 @@ export function Header() {
     }
 
     return (
-        <div className="w-full h-40 bg-header-mobile lg:bg-header-desktop bg-no-repeat bg-cover bg-center bg-gray-200">
+        <div className="w-full h-40 bg-header-mobile lg:bg-header-desktop bg-no-repeat bg-cover bg-center dark:bg-slate-900">
             <div className="mx-auto max-w-[1600px] h-full flex justify-between items-center">
-                <img src="../assets/desktop/logo.svg" alt="Devjobs logo"/>
+                <Link to="/"><img src="../assets/desktop/logo.svg" alt="Devjobs logo"/></Link>
                 <label htmlFor="theme" className="flex items-center cursor-pointer">
                     <div className="relative">
                         <input type="checkbox" id="theme" className="sr-only" defaultChecked={darkIsChecked} onChange={handleThemeSwitch}/>
