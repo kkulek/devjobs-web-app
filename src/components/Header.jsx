@@ -29,7 +29,7 @@ export function Header() {
 
     return (
         <div className="w-full h-40 bg-header-mobile lg:bg-header-desktop bg-no-repeat bg-cover bg-center dark:bg-slate-900">
-            <div className="mx-auto max-w-[1600px] h-full flex justify-between items-center">
+            <div className="mx-auto px-4 sm:px-10 lg:px-20 max-w-[1600px] h-full flex justify-between items-center">
                 <Link to="/"><img src="../assets/desktop/logo.svg" alt="Devjobs logo"/></Link>
                 <label htmlFor="theme" className="flex items-center cursor-pointer">
                     <div className="relative">
