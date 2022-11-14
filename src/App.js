@@ -21,7 +21,7 @@ function App() {
 
     return (
         <Router>
-            <main className="bg-gray-100 h-full min-h-screen relative">
+            <main className="bg-gray-100 dark:bg-slate-900 h-full min-h-screen relative">
                 <Header/>
                 {!isLoaded ? console.log('not loaded yet') : (
                     <Routes>

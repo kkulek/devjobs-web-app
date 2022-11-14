@@ -32,7 +32,7 @@ export function SearchBar({handleFilter}) {
 
     return (
         <div className="flex justify-center -translate-y-1/4 md:-translate-y-1/2 ">
-            <div className="inline-block bg-white px-6 rounded shadow-lg">
+            <div className="inline-block bg-white dark:bg-slate-800 px-6 rounded shadow-lg">
                 <form className="flex flex-col md:flex-row gap-2">
                     <label htmlFor="mix" className="flex items-center">
                         <span className="inline-block h-6 w-6 bg-search bg-no-repeat bg-center bg-contain"></span>

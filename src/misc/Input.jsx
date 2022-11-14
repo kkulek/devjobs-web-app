@@ -8,7 +8,7 @@
              id={idVal}
              value={value}
              onChange={onChange}
-             className={`p-4 placeholder:text-xs w-${width} focus:outline-0`}
+             className={`p-4 placeholder:text-xs w-${width} focus:outline-0 dark:bg-slate-800 dark:text-slate-200`}
          />
      )
  }
